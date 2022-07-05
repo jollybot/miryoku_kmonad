@@ -6,8 +6,7 @@ jobs:
     uses: ./.github/workflows/main.yml
     with:
       mode: '["build"]'
-      alphas: '["default"]'
-      extra: '["colemakdh"]'
+      alphas: '["colemakdh"]'
       nav: '["vi"]'
       clipboard: '["mac"]'
       layers: '["default"]'
