@@ -24,7 +24,7 @@
 (defsrc
 #if defined (MIRYOKU_MAPPING_NOREVERSEANGLE)
   grv    1      2      3      4           8      9      0      -      =
-  tap    q      w      e      r           i      o      p      [      ]
+  tab    q      w      e      r           i      o      p      [      ]
   caps   a      s      d      f           k      l      ;      U_QUOT ent
                 z      x      c           ,      .      /
 #elif defined (MIRYOKU_MAPPING_LITE)
@@ -42,6 +42,11 @@
   a      r      s      t      g           m      n      e      i      o
   z      x      c      d      v           k      h      ,      .      /
                 esc    spc    tab         ent    bspc   del
+#elif defined (MIRYOKU_MAPPING_KINESIS_ADVANTAGE)
+  q      w      e      r      t           y      u      i      o      p
+  a      s      d      f      g           h      j      k      l      ;
+  z      x      c      v      b           n      m      ,      .      /
+                bspc   del    end         pgdn   ent    spc
 #else
   2      3      4      5      6           8      9      0      -      =
   q      w      e      r      t           i      o      p      [      ]
@@ -51,7 +56,7 @@
 )
 
 #define MIRYOKU_X(LAYER, STRING) \
-(deflayer LAYER U_LF \
+(deflayer U_##LAYER U_LF \
 U_MACRO_VA_ARGS(MIRYOKU_LAYERMAPPING_##LAYER, MIRYOKU_LAYER_##LAYER) U_LF \
 ) U_LF
 MIRYOKU_LAYER_LIST
